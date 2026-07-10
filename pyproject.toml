@@ -57,10 +57,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://packageshere.github.io/django-social-auth-rest/"
-Documentation = "https://packageshere.github.io/django-social-auth-rest/"
-Repository = "https://github.com/packageshere/django-social-auth-rest"
-Issues = "https://github.com/packageshere/django-social-auth-rest/issues/"
+Homepage = "https://PackageSphere.github.io/django-social-auth-rest/"
+Documentation = "https://PackageSphere.github.io/django-social-auth-rest/"
+Repository = "https://github.com/PackageSphere/django-social-auth-rest"
+Issues = "https://github.com/PackageSphere/django-social-auth-rest/issues/"
 
 [build-system]
 requires = ["setuptools>=68", "wheel", "setuptools-scm>=8"]

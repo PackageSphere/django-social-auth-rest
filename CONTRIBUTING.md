@@ -12,7 +12,7 @@ This project is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By partic
 
 ```bash
 # Clone your fork
-git clone https://github.com/packageshere/django-social-auth-rest.git
+git clone https://github.com/PackageSphere/django-social-auth-rest.git
 cd django-social-auth-rest
 
 uv sync
