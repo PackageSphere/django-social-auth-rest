@@ -8,6 +8,7 @@ This module provides endpoints for GitHub OAuth state generation,
 user authentication, account linking, and account unlinking.
 """
 
+from django.utils import timezone
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -88,6 +89,9 @@ class GithubAuthViewSet(BaseSocialAuthViewSet):
                 user=user,
                 provider=SocialAccountProvider.GITHUB,
             )
+
+        user.last_login = timezone.now()
+        user.save(update_fields=["last_login"])
 
         login_successful.send_robust(
             sender=self.__class__,
