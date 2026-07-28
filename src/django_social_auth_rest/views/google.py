@@ -8,6 +8,7 @@ This module provides endpoints for user authentication, account
 linking, and account unlinking using Google.
 """
 
+from django.utils import timezone
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -70,6 +71,9 @@ class GoogleAuthViewSet(BaseSocialAuthViewSet):
                 user=user,
                 provider=SocialAccountProvider.GOOGLE,
             )
+
+        user.last_login = timezone.now()
+        user.save(update_fields=["last_login"])
 
         login_successful.send_robust(
             sender=self.__class__,
